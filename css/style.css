@@ -1,0 +1,682 @@
+#header {
+    position: relative;
+}
+
+#header .hd_l {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 72px;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-right: 1px solid #ddd;
+    padding: 40px 0;
+}
+
+
+#header .hd_l .menu {
+    position: fixed;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+#header .hd_l .menu button {
+    font-size: 0;
+}
+
+#header .hd_l .menu button::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #333;
+}
+
+#header .hd_l .menu.on button::before {
+    display: none;
+}
+
+#header .hd_l .menu button::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #333;
+}
+
+#header .hd_l .menu.on button::after {
+    display: none;
+}
+
+#header .hd_l .menu button span::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #333;
+}
+
+#header .hd_l .menu.on button span::before {
+    transform: rotate(45deg);
+}
+
+#header .hd_l .menu button span::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #333;
+}
+
+#header .hd_l .menu.on button span::after {
+    transform: rotate(-45deg);
+}
+
+#header .hd_l .cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 72px;
+    right: 0;
+    z-index: 998;
+    background: #fff;
+    color: #222;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .hd_l .cover.on {
+    display: flex;
+}
+
+#header .hd_l .cover ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#header .hd_l .cover ul>li>a {
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 40px;
+    font-family: "Red Hat Display";
+    color: #ddd;
+}
+
+#header .hd_l .cover ul>li>a::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 2px;
+    background: #ddd;
+}
+
+#header .hd_r {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 72px;
+    width: 300px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+
+    /*  */
+    border-radius: 0 100% 50% 0;
+
+    transform: translate(-40px, 0) rotate(-4deg);
+}
+
+#header .hd_r h1 {
+    position: fixed;
+    top: 40px;
+    left: 120px;
+
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "Red Hat Display";
+
+    transform: rotate(4deg);
+
+}
+
+#header .hd_r h1 strong {
+    display: block;
+    font-weight: 900;
+}
+
+#header .hd_r .gnb {
+    position: fixed;
+    top: 200px;
+    left: 120px;
+    z-index: 999;
+
+    transform: rotate(4deg);
+}
+
+#header .hd_r .gnb ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#header .hd_r .gnb ul>li>a {
+    position: relative;
+    display: block;
+    width: 200px;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: "Red Hat Display";
+    color: #999;
+    line-height: 48px;
+}
+
+#header .hd_r .gnb ul>li.on a {
+    color: #222;
+}
+
+#header .hd_r .gnb ul>li:nth-child(2).on a {
+    color: #fff;
+}
+
+#header .hd_r .gnb ul>li:nth-child(3).on a {
+    color: #fff;
+}
+
+#header .hd_r .gnb ul>li>a::before {
+    position: absolute;
+    bottom: 0;
+    left: -32px;
+    z-index: -1;
+    content: "";
+    height: 100%;
+    width: 0;
+    border-radius: 40px;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    transition: 0.5s 0.3s;
+    opacity: 0;
+}
+
+#header .hd_r .gnb ul>li.on a::before {
+    position: absolute;
+    bottom: 0;
+    left: -32px;
+    z-index: -1;
+    content: "";
+    height: 100%;
+    width: 320px;
+    border-radius: 40px;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    transition: 0.5s 0.3s;
+    opacity: 1;
+}
+
+#header .hd_r .gnb ul>li:nth-child(2) a::before {
+    background: linear-gradient(to right, #77797b 0%, #484848 100%);
+}
+
+#header .hd_r .gnb ul>li:nth-child(3) a::before {
+    background: linear-gradient(20deg, #ee6e87 0%, #FFEDBC 100%);
+}
+
+#header .hd_r .gnb ul>li:nth-child(4) a::before {
+    background: linear-gradient(90deg, #ebe6da 0%, #bfc5c1 100%);
+}
+
+#header .hd_r .gnb ul>li:nth-child(5) a::before {
+    background: linear-gradient(135deg, #dddddd 0%, #fff6ee 100%);
+}
+
+#header .hd_r .gnb ul>li:nth-child(6) a::before {
+    background: linear-gradient(90deg, #e9e9e9 0%, #57696E 100%);
+}
+
+#header .hd_r em {
+    position: fixed;
+    bottom: 40px;
+    left: 80px;
+    transform: rotate(4deg);
+
+
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 500;
+    color: #ddd;
+    font-family: "Red Hat Display";
+}
+
+
+#header .hd_r .number {
+    position: fixed;
+    bottom: 39px;
+    left: 100px;
+    transform: rotate(4deg);
+
+
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: "Red Hat Display";
+    color: #555;
+
+}
+
+
+#content {
+    margin-left: 372px;
+}
+
+/* 인트로시작 */
+
+.intro {
+    position: relative;
+}
+
+
+.intro .inner {}
+
+.intro .inner .tit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+
+.intro .inner .tit h2 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 88px;
+    line-height: 88px;
+    font-family: "Bebas Neue";
+    font-weight: 900;
+    letter-spacing: 8px;
+    background: linear-gradient(to left, #b8b4b0 0%, #304352 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.intro .inner .tit h2::before {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    content: "";
+    height: 1px;
+    width: 180px;
+    background: linear-gradient(to left, #d7d2cc 0%, #304352 100%);
+    filter: blur(1px);
+}
+
+.intro .inner .tit .line {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 160px;
+    background: linear-gradient(to left, #d7d2cc 0%, #304352 100%);
+    filter: blur(1px);
+}
+
+.intro .eq_f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skew(38deg, 11deg);
+    z-index: 0;
+}
+
+.intro .eq_f svg {
+    width: 300px;
+    fill: none;
+    stroke: rgba(215, 210, 204, 0.5);
+    stroke-width: 0.5px;
+    stroke-dasharray: 300px;
+    stroke-dashoffset: 5px;
+    overflow: visible;
+
+    animation: c 4s infinite linear;
+}
+
+@keyframes c {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.intro .inner .tit p {
+    color: #212121;
+    font-weight: 200;
+    letter-spacing: -1.6px;
+    text-align: right;
+}
+
+.intro .inner .txt {
+    position: absolute;
+    bottom: 80px;
+    right: 100px;
+}
+
+.intro .inner .txt p {
+    font-size: 12px;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: -0.5px;
+}
+
+
+.intro .inner .scroll {
+    position: absolute;
+    bottom: 80px;
+    left: 120px;
+
+    color: #fff;
+}
+
+
+/* 인트로 끝 */
+
+
+.pf .inner {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.pf .inner>* {
+    flex: 1;
+}
+
+.pf .inner .fo {
+    order: -1;
+}
+
+.pf .desc_area {
+    flex: 1;
+    opacity: 0;
+    transform: translate(0, 100px);
+}
+
+.pf.on .desc_area {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: 0.5s 0.7s;
+}
+
+.pf .desc_area .tit {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.pf .desc_area .tit::before {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    left: 0;
+    content: "";
+    height: 1px;
+    background: rgba(221, 221, 221, 0.6);
+}
+
+.pf .desc_area .tit h2 {
+    font-size: 46px;
+    line-height: 48px;
+    color: #333;
+    font-family: "Red Hat Display";
+    font-weight: 900;
+
+    margin-bottom: 8px;
+}
+
+.pf .desc_area .tit span {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #666;
+}
+
+.pf .desc_area .desc {
+    margin-bottom: 40px;
+}
+
+.pf .desc_area .desc p {
+    color: #333;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+
+    margin-bottom: 24px;
+}
+
+.highlight_21 {
+    background: #212121;
+    color: #fff;
+    font-weight: 400;
+}
+
+.highlight_ff {
+    background: #fff;
+    color: #222;
+    font-weight: 400;
+    border: 1px solid #ddd;
+    margin-left: 4px;
+}
+
+.highlight_d47676 {
+    background: #d47676;
+    font-weight: 400;
+    color: #fff;
+}
+
+.highlight_22 {
+    background: #222;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid #ddd;
+    margin-left: 4px;
+}
+
+.highlight_f9 {
+    background: #f9f9f9;
+    color: #222;
+    font-weight: 400;
+    border: 1px solid #ddd;
+}
+
+.highlight_dd {
+    background: #ddd;
+    color: #222;
+    font-weight: 400;
+    border: 1px solid #d0d0d0;
+    margin-left: 4px;
+}
+
+.highlight_57696e {
+    background: #57696e;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid #d0d0d0;
+}
+
+.highlight_f7f8f9 {
+    background: #f7f8f9;
+    color: #222;
+    font-weight: 400;
+    border: 1px solid #d0d0d0;
+}
+
+
+.highlight_b6aca2 {
+    background: #b6aca2;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid #d0d0d0;
+    margin-left: 4px;
+}
+
+
+.pf .desc_area .desc table th {
+    height: 24px;
+    text-align: left;
+
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #333;
+    font-family: "Red Hat Display";
+}
+
+.pf .desc_area .desc table .op_tit {
+    color: #222;
+    font-weight: 600;
+}
+
+.pf .desc_area .desc table td {
+    height: 24px;
+}
+
+.pf .img_area {
+    flex: 2;
+    opacity: 0;
+    transform: translate(0, -100px);
+}
+
+.pf.on .img_area {
+    flex: 2;
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: 0.5s 1.2s;
+}
+
+.pf .inner .img_box {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.pf01 .inner .img_box {
+    outline: 8px solid #4d4d4d;
+    box-shadow: 0 4px 15px 10px rgba(77, 77, 77, 0.5);
+}
+
+.pf02 .inner .img_box {
+    outline: 8px solid #e8af9e;
+    box-shadow: 0 4px 15px 10px rgba(232, 175, 158, 0.5);
+}
+
+.pf03 .inner .img_box {
+    outline: 8px solid #ebe6da;
+    box-shadow: 0 4px 15px 10px rgba(235, 230, 218, 0.9);
+}
+
+.pf04 .inner .img_box {
+    outline: 8px solid #ddd;
+    box-shadow: 0 4px 15px 10px rgba(221, 221, 221, 0.9);
+}
+
+.pf05 .inner .img_box {
+    outline: 8px solid #57696E;
+    box-shadow: 0 4px 15px 10px rgba(87, 105, 110, 0.5);
+}
+
+.pf .inner .lnk {
+    display: flex;
+    gap: 10px;
+}
+
+.pf .btn {
+    margin-bottom: 8px;
+    display: inline-block;
+    background: #333;
+    padding: 12px 24px;
+    width: 120px;
+    border-radius: 12px;
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    font-family: "Red Hat Display";
+}
+
+.pf .btn_hover {
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    background-size: 200% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.pf .btn_hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.pf .color_1 {
+    background-image: linear-gradient(to right, #77797b 0%, #484848 100%);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.4);
+}
+
+.pf .color_2 {
+    background-image: linear-gradient(-20deg, #ED4264 0%, #FFEDBC 100%);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.4);
+}
+
+.pf .color_3 {
+    background-image: linear-gradient(90deg, #ebe6da, #bfc5c1);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.4);
+    color: #222;
+}
+
+.pf .color_4 {
+    background-image: linear-gradient(135deg, #dddddd 0%, #fff6ee 100%);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.4);
+    color: #222;
+}
+
+.pf .color_5 {
+    background-image: linear-gradient(90deg, #e9e9e9 0%, #57696E 100%);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.4);
+    color: #222;
+}
